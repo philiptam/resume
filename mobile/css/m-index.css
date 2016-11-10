@@ -1,0 +1,150 @@
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+.myResume{
+    height: 100%;;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    background-color: #eee;
+    position: relative;
+}
+/*ul.li样式设置*/
+.ul{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.ul>li{
+    width: 100%;
+    height: 100%;
+
+}
+.ul>li:nth-child(1){background-color: #cccccc;}
+.ul>li:nth-child(2){
+    background-color: yellow;}
+.ul>li:nth-child(3){
+    background-color: cyan;}
+.ul>li:nth-child(4){
+    background-color: blue;}
+.ul>li:nth-child(5){
+    background-color: green;}
+.ul>li:nth-child(6){
+    background-color: pink;}
+/*首页目录设置*/
+.ul .list .pic{
+    width: 100%;
+    padding-top: 30px;
+    position: relative;
+}
+.ul .list .pic img{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.ul .list .pic p{
+    padding-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.ul .list .list-ul{
+    width: 100%;
+    margin-top: 30px;
+}
+.ul .list .list-ul li{
+    width: 50%;
+    float: left;
+    text-align: center;
+
+}
+.ul .list .list-ul li p{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+    margin-top: 25px;
+    padding-top: 26px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.ul .list .list-ul li:nth-child(2n-1){
+    padding-left: 20px;
+}
+.ul .list .list-ul li:nth-child(2n){
+    padding-right: 20px;
+}
+.ul .list .list-ul li:nth-child(1) p{
+    background-color: orangered;
+}
+.ul .list .list-ul li:nth-child(2) p{
+    background-color: darkturquoise;
+}
+.ul .list .list-ul li:nth-child(3) p{
+    background-color: blueviolet;
+}
+.ul .list .list-ul li:nth-child(4) p{
+    background-color: #b2f471;
+}
+/*基本信息  aboutme*/
+.ul .aboutMe h4{
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    background-color: #0075ff;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+}
+.ul .aboutMe div:nth-of-type(1){
+    width: 100%;
+    height: 75px;
+    background-color: #cccccc;
+    padding:10px 15px ;
+}
+.ul .aboutMe div:nth-of-type(2){
+     width: 100%;
+     background-color: #cccccc;
+     padding:10px 15px ;
+     line-height: 20px;
+    text-indent: 2em;
+ }
+
+/*我的技能  myskill*/
+.ul .skill h4{
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    background-color: #0075ff;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+}
+.ul .skill .skill-context{
+    width: 100%;
+}
+.ul .skill .skill-context .item{
+    width: 100%;
+}
+.ul .skill .item div{
+    width: 100%;
+}
+.ul .skill .item div:nth-of-type(1){
+    height: 25px;
+    background-color: #cccccc;
+}
+.ul .item div:nth-of-type(2){
+    height: 0px;
+    overflow: hidden;
+}
+.ul .skill .item div:nth-of-type(2) span{
+    display: inline-block;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+.ul .skill .item .show{
+    height: auto;
+}
+/*我的技能  myskill*/

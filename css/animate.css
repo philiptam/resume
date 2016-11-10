@@ -1,0 +1,191 @@
+/*旋转技能*/
+.myskill .sk1 {
+    z-index: 7;
+    position: relative;
+    /*transform: rotate(60deg);*/
+    animation: sk1 1.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+
+}
+.myskill .sk2 {
+    z-index: 6;
+    transform: rotate(0deg);
+    /*transform: rotate(120deg);*/
+    animation: sk2 1.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.myskill .sk3 {
+    z-index: 5;
+    transform: rotate(0deg);
+    /*transform: rotate(180deg);*/
+    animation: sk3 1.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.myskill .sk4 {
+    z-index: 4;
+    transform: rotate(0deg);
+    /*transform: rotate(240deg);*/
+    animation: sk4 1.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.myskill .sk5 {
+    z-index: 3;
+    transform: rotate(0deg);
+    /*transform: rotate(300deg);*/
+    animation: sk5 1.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.myskill .sk6 {
+    z-index: 2;
+}
+.myskill:active .sk1{
+    animation-play-state:running;
+}
+.myskill:active .sk2{
+    animation-play-state:running;
+}
+.myskill:active .sk3{
+    animation-play-state:running;
+}
+.myskill:active .sk4{
+    animation-play-state:running;
+}
+.myskill:active .sk5{
+    animation-play-state:running;
+}
+
+@keyframes sk1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(60deg);
+    }
+}
+@keyframes sk2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(120deg);
+    }
+}
+@keyframes sk3 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+@keyframes sk4 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(240deg);
+    }
+}
+@keyframes sk5 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(300deg);
+    }
+}
+/*技能旋转*/
+
+
+/*圆形进度条*/
+/*二环从45°开始旋转180° 到225°*/
+
+@keyframes move1 {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(189deg);
+    }
+}
+/*二环上颜色*/
+
+@keyframes opacity1 {
+    /*0%{*/
+        /*border-top-color: transparent;*/
+        /*border-right-color: transparent;*/
+    /*}*/
+    100%{
+        border-top-color:#F29F3F;
+        border-right-color: #F29F3F;
+    }
+}
+
+@keyframes opacity11 {
+    /*0%{*/
+    /*border-top-color: transparent;*/
+    /*border-right-color: transparent;*/
+    /*}*/
+    100%{
+        border-top-color:#8192D6;
+        border-right-color: #8192D6;
+    }
+}
+@keyframes opacity12 {
+    100%{
+        border-top-color:#F44336;
+        border-right-color: #F44336;
+    }
+}
+@keyframes opacity13 {
+    100%{
+        border-top-color:#996699;
+        border-right-color: #996699;
+    }
+}
+@keyframes opacity14 {
+    100%{
+        border-top-color:#0CE854;
+        border-right-color: #0CE854;
+    }
+}
+@keyframes opacity15 {
+    100%{
+        border-top-color:#F29F3F;
+        border-right-color: #F29F3F;
+    }
+}
+@keyframes opacity16 {
+    100%{
+        border-top-color:#000000;
+        border-right-color: #000000;
+    }
+}
+
+/*四环变透明*/
+@keyframes opacity {
+    100%{
+        border-bottom-color:transparent ;
+        border-left-color:transparent ;
+    }
+}
+/*三环从45°开始旋转180°，到225°*/
+@keyframes move {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(225deg);
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="css/m-reset.css"/>
+    <link rel="stylesheet" href="css/m-index.css"/>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/fx.js"></script>
+    <script src="js/fx_methods.js"></script>
+    <script src="js/m-index.js"></script>
+</head>
+<body>
+<div class="myResume">
+    <ul class="ul" id="ul">
+        <li class="list" id="list">
+            <div class="pic">
+                <img id="mypic" src="images/touxiang.jpg" alt=""/>
+                <p>个人简介</p>
+            </div>
+            <ul class="list-ul clearfix">
+                <li id="tomyskill"><p>我的<br/>技能</p></li>
+                <li id="tomyexp"><p>项目<br/>经验</p></li>
+                <li id="tomyhobby"><p>兴趣<br/>爱好</p></li>
+                <li id="tocontact"><p>联系<br/>我吧</p></li>
+            </ul>
+        </li>
+        <li class="aboutMe" id="aboutMe">
+            <h4>个人信息</h4>
+            <div>谭启宇</div>
+            <h4>自我评价</h4>
+            <div>本人对待工作态度认真严谨，有责任感，能够与他人融洽相处，有良好的团队协作精神和能力。对生活乐观积极向上，无论遇到任何困难都不轻易放弃。善于学习和接受新的知识和事物，愿意虚心向别人学习，对新鲜好奇有强烈的求知欲，拥有较强的组织能力和适应能力。</div>
+            <h4>工作期望</h4>
+        </li>
+        <li class="skill" id="skill">
+            <h4>我的技能</h4>
+            <div class="skill-context">
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description show"><span>熟练使用html，HTML对页面符合W3C布局，能够灵活运用H5C3的效果，提高用户对页面的体验</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description"><span>熟练掌握javascript原生代码的使用，并且熟悉jQuery的使用方法，极大提高页面的开发效率以及很好地处理不同浏览器的兼容问题</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description"><span>掌握ajax对后台计算机的请求方法，做到即使不用刷新页面也能够请求数据，达到减压服务器压力的目的，并且能够更好提高用户体验</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description"><span>掌握node.js的开发流程，通过node.js来处理前后端的数据</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description"><span>掌握面向对象的原理和方法，能够搭建简单的框架</span></div>
+                </div>
+                <div class="item">
+                    <div class="title">进度条</div>
+                    <div class="description"><span>熟悉现在的主流框架的使用方法，如bootstarp、AngularJS、zepto等，提高开发效率，处理浏览器兼容性问题</span></div>
+                </div>
+            </div>
+        </li>
+        <li class="exp" id="exp"></li>
+        <li class="hobby" id="hobby"></li>
+        <li class="contact" id="contact"></li>
+    </ul>
+</div>
+</body>
+<script>
+        var width=window.innerWidth
+        if(width>640){
+            window.open("../index.html","_self")
+        }
+        window.onresize= function () {
+            width=window.innerWidth;
+            if(width>640){
+                window.open("../index.html","_self")
+            }
+        }
+</script>
+</html>

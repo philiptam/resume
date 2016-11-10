@@ -1,0 +1,938 @@
+
+html,body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.myResume {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.myResume .background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/*��������*/
+.nav-top{
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    background-color: rgba(186, 186, 186, 0);
+    z-index: 2;
+    top: 5px;
+}
+
+.nav-top .nav-top-ul {
+    width: 600px;
+    height: 30px;
+    margin: 0 auto;
+
+}
+
+.nav-top .nav-top-ul li{
+    float: left;
+    width: 110px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.nav-top .nav-top-ul li span{
+    display: block;
+    width: 110px;
+    height: 30px;
+    font: 400 15px "microsoft yahei";
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    background-color: orange;
+    position: relative;
+    transition:transform 0.3s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+}
+.nav-top-ul li span::before{
+    display:block;
+    position: absolute;
+    content: attr(data-hover);
+    top:100%;
+    width: 110px;
+    height: 30px;
+    border-radius: 5px;
+    background: #eec93d;
+    transition: background 0.3s;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+}
+.nav-top-ul li:hover span{
+    transform: rotateX(90deg) translateY(-22px);
+}
+
+#nav-top .nav-top-ul .current span {
+    background-color: red;
+}
+#nav-top .nav-top-ul .current span::before {
+    background-color: #ff157d;
+}
+/*��������*/
+/*li��ʽ*/
+.ul {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.ul>li{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ul .aboutMe,.ul .skill,.ul .exp,.ul .hobby,.ul .contact{
+    background-color: transparent;
+}
+
+/*li��ʽ*/
+
+/*С��ͷ*/
+.arr {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    right: 80px;
+    margin-left: -13px;
+}
+
+.arr img {
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.3s;
+}
+
+.arr .arrUp img:hover{
+    animation: arrUp 0.5s ease-out  infinite;
+}
+
+.arr .arrDown img:hover{
+    animation: arrDown 0.5s ease-out  infinite;
+}
+
+@keyframes arrUp{
+    0%{
+        top:0px;
+    }
+    95%{
+        top:-5px;
+    }
+    100%{
+        top:0px;
+    }
+}
+
+@keyframes arrDown{
+    0%{
+        top:0px;
+    }
+    95%{
+        top:5px;
+    }
+    100%{
+        top:0px;
+    }
+}
+
+
+.arr .arrUp,.arr .arrDown{
+    position: absolute;
+    cursor: pointer;
+}
+
+.arr .arrUp{
+    top: 230px;
+}
+
+.arr .arrDown{
+    bottom: 280px;
+}
+
+/*С��ͷ*/
+
+/*С���*/
+.littleRock {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: 35px;
+    bottom: 50px;
+    opacity: 0;
+    z-index: 2;
+}
+.littleRock img:hover{
+    animation: littlerock 0.5s ease-out  infinite;
+}
+@keyframes littlerock{
+    0%{
+        top:0px
+    }
+    95%{
+        top:15px;
+    }
+    100%{
+        top:0px;
+    }
+}
+.littleRock img {
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+/*С���*/
+
+/*ͷ��*/
+.myResume .mypic {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    top: 15%;
+    left: 50%;
+    z-index: 25;
+    margin-left: -75px;
+}
+
+/*skill-----------------------------------------------*/
+.skill .skill-contant {
+    width: 1000px;
+    height: 550px;
+    background-color: transparent;
+    margin: 65px auto;
+    position: relative;
+}
+.skill .skill-contant .skilldescribe{
+    width: 220px;
+    height: 80px;
+    position: absolute;
+    background-color: #333333;
+    border-radius: 5px;
+    color: #ffffff;
+    display: none;
+    padding: 5px 0 0 5px;
+}
+.skill .skill-contant .skilldescribe:nth-child(4){
+    top: 145px;
+    left: 760px;
+}
+.skill .skill-contant .skilldescribe:nth-child(5){
+    top: 340px;
+    left: 760px;
+
+}
+.skill .skill-contant .skilldescribe:nth-child(1){
+    top: 340px;
+    left: 0px;
+}
+.skill .skill-contant .skilldescribe:nth-child(2){
+    top: 145px;
+    left: 0px;
+}
+.skill .skill-contant .skilldescribe:nth-child(3){
+    top: -5px;
+    left: 600px;
+}
+.skill .skill-contant .skilldescribe:nth-child(6){
+    top: 485px;
+    left: 170px;
+}
+
+
+
+.skill-contant .myskill{
+    width: 142px;
+    height: 142px;
+    border: 10px solid red;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -78px;
+    margin-left: -90px;
+    z-index: 20;
+    box-shadow: 0px 0px 20px 10px red;
+    cursor: pointer;
+}
+.skill-contant .myskill .clickhere{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.skill-contant .myskill .clickhere::before{
+    display: block;
+    content:"show my skill";
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 55px;
+    left: 0px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+.myskill .clickhere img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 4px;
+    left: 25px;
+}
+
+.myskill .sk1,.myskill .sk2,.myskill .sk3,.myskill .sk4,.myskill .sk5,.myskill .sk6{
+    width: 162px;
+    height: 270px;
+    position: absolute;
+    transform-origin: center top;
+    top:50%;
+    left: -2%;
+    opacity: 0;
+}
+/*����Բ����������*/
+.myskill .sk1 .h5c3,.myskill .sk2 .jQuery,.myskill .sk3 .ajax,.myskill .sk5 .mianxiangduixiang,.myskill .sk4 .node-js,.myskill .sk6 .frame{
+    position: absolute;
+    z-index: 3;
+    font-size: 20px;
+}
+.myskill .sk1 .h5c3::before,.myskill .sk2 .jQuery::before,.myskill .sk3 .ajax::before,.myskill .sk5 .mianxiangduixiang::before,.myskill .sk4 .node-js::before,.myskill .sk6 .frame::before{
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 45px;
+    top: -80px;
+    left: -36px;
+    padding: 20px 40px 50px 40px;
+    background-repeat: no-repeat;
+    -webkit-background-size: 45px 60px;
+    background-size: 45px 60px;
+    -webkit-background-origin: content-box;
+    background-origin: content-box;
+}
+.myskill .sk1 .h5c3{
+    left: 74px;
+    bottom: 53px;
+    transform: rotate(-60deg);
+    color: #8192D6;
+}
+.myskill .sk1 .h5c3::before{
+    background-image: url("../images/html5.svg");
+}
+.myskill .sk2 .jQuery{
+    left: 64px;
+    bottom: 72px;
+    transform: rotate(-120deg);
+    color: #F44336;
+}
+.myskill .sk2 .jQuery::before{
+    background-image: url("../images/jquery.svg");
+}
+.myskill .sk3 .ajax{
+    left: 64px;
+    bottom: 87px;
+    transform: rotate(-180deg);
+    color: #996699;
+}
+.myskill .sk3 .ajax::before{
+    background-image: url("../images/ajax.svg");
+}
+.myskill .sk4 .node-js{
+    left: 31px;
+    bottom: 79px;
+    transform: rotate(-240deg);
+    color: #0CE854;
+}
+.myskill .sk4 .node-js::before{
+    background-image: url("../images/nodejs.png");
+    width: 60px;
+    -webkit-background-size: 60px 60px;
+    background-size: 60px 60px;
+    left: -38px;
+}
+.myskill .sk5 .mianxiangduixiang{
+    left: 28px;
+    bottom: 61px;
+    transform: rotate(60deg);
+    color: #F29F3F;
+}
+.myskill .sk5 .mianxiangduixiang::before{
+    background-image: url("../images/mianxiangduixiang.svg");
+    left: -22px;
+}
+.myskill .sk6 .frame{
+    left: 41px;
+    bottom: 55px;
+    color: #000;
+}
+.myskill .sk6 .frame::before{
+    background-image: url("../images/frame.svg");
+    left: -20px;
+}
+
+
+
+
+
+/*Բ�ν�����*/
+.myskill .round1{
+    position: relative;
+    top: 59%;
+    left: -71px;
+    transform: rotate(-60deg);
+}
+.myskill .round2{
+    position: relative;
+    top: 89%;
+    left: -71px;
+    transform: rotate(-120deg);
+}
+.myskill .round3{
+    position: relative;
+    top: 100%;
+    left: 0px;
+    transform: rotate(-180deg);
+}
+.myskill .round4{
+    position: relative;
+    top: 85%;
+    left: 70px;
+    transform: rotate(-240deg);
+}
+.myskill .round5{
+    position: relative;
+    top: 55%;
+    left: 70px;
+    transform: rotate(-300deg);
+}
+.myskill .round6{
+    position: relative;
+    top: 40%;
+    left: 0px;
+}
+
+.sk6 .round6 div,.sk5 .round5 div,.sk1 .round1 div,.sk4 .round4 div,.sk2 .round2 div,.sk3 .round3 div{
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+.sk6 .round6 .r1,.sk5 .round5 .r1,.sk1 .round1 .r1,.sk4 .round4 .r1,.sk2 .round2 .r1,.sk3 .round3 .r1{
+    width: 142px;
+    height: 142px;
+    border-radius: 50%;
+    border: 10px solid #FFE957;
+    background-color: #ffffff;
+}
+.sk6 .round6 .r2,.sk5 .round5 .r2,.sk1 .round1 .r2,.sk4 .round4 .r2,.sk2 .round2 .r2,.sk3 .round3 .r2{
+    width: 142px;
+    height: 142px;
+    border-top-width: 10px;
+    border-top-style: solid;
+    border-top-color: transparent;
+    border-right-width: 10px;
+    border-right-style: solid;
+    border-right-color: transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: opacity1 1ms 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk6 .round6 .r3,.sk5 .round5 .r3,.sk1 .round1 .r3,.sk4 .round4 .r3,.sk2 .round2 .r3,.sk3 .round3 .r3{
+    width: 142px;
+    height: 142px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom-width: 10px;
+    border-bottom-style: solid;
+    border-left-width: 10px;
+    border-left-style: solid;
+    border-bottom-color: #F29F3F;
+    border-left-color: #F29F3F;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: move 1s linear 1.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk6 .round6 .r4,.sk5 .round5 .r4,.sk1 .round1 .r4,.sk4 .round4 .r4,.sk2 .round2 .r4,.sk3 .round3 .r4{
+    width: 142px;
+    height: 142px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom-width: 10px;
+    border-bottom-style: solid;
+    border-left-width: 10px;
+    border-left-style: solid;
+    border-bottom-color:#FFE957 ;
+    border-left-color:#FFE957 ;
+    background-origin: content-box;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: opacity 1ms 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+/*ɫ������*/
+/*1��*/
+.sk1 .round1 .r1{
+    border-color: #81C2D6;
+}
+.sk2 .round2 .r1{
+    border-color: #D32F2F;
+}
+.sk3 .round3 .r1{
+    border-color: #cccccc;
+}
+.sk4 .round4 .r1{
+    border-color: #0DFEFF;
+}
+.sk5 .round5 .r1{
+    border-color:#FFE957;
+}
+.sk6 .round6 .r1{
+    border-color: #cccccc;
+}
+
+.sk1 .round1 .r2{
+    animation: opacity11 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk2 .round2 .r2{
+    animation: opacity12 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk3 .round3 .r2{
+    animation: opacity13 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk4 .round4 .r2{
+    animation: opacity14 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk5 .round5 .r2{
+    animation: opacity15 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.sk6 .round6 .r2{
+    animation: opacity16 1ms 2.5s,move1 1s linear 2.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+
+
+/*/!*3��*!/*/
+.sk1 .round1 .r3{
+    border-bottom-color: #8192D6;
+    border-left-color: #8192D6;
+}
+.sk2 .round2 .r3{
+    border-bottom-color: #F44336;
+    border-left-color:#F44336;
+}
+.sk3 .round3 .r3{
+    border-bottom-color: #996699;
+    border-left-color: #996699;
+}
+.sk4 .round4 .r3{
+    border-bottom-color:#0CE854;
+    border-left-color: #0CE854;
+}
+.sk5 .round5 .r3{
+    border-bottom-color: #F29F3F;
+    border-left-color: #F29F3F;
+}
+.sk6 .round6 .r3{
+    border-bottom-color: #000000;
+    border-left-color: #000000;
+}
+/*/!*4�� *!/*/
+.sk1 .round1 .r4{
+    border-bottom-color:#81C2D6 ;
+    border-left-color:#81C2D6 ;
+}
+.sk2 .round2 .r4{
+    border-bottom-color:#D32F2F ;
+    border-left-color:#D32F2F ;
+}
+.sk3 .round3 .r4{
+    border-bottom-color:#cccccc ;
+    border-left-color:#cccccc ;
+}
+.sk4 .round4 .r4{
+    border-bottom-color:#0DFEFF ;
+    border-left-color:#0DFEFF ;
+}
+.sk5 .round5 .r4{
+    border-bottom-color:#FFE957 ;
+    border-left-color:#FFE957 ;
+}
+.sk6 .round6 .r4{
+    border-bottom-color:#cccccc ;
+    border-left-color:#cccccc ;
+}
+/*ɫ������*/
+.myskill:active .r3 {
+    animation-play-state: running;
+}
+/*�Ļ���͸��*/
+.myskill:active .r4{
+    animation-play-state: running;
+}
+/*��������ɫ*/
+.myskill:active .r2{
+    animation-play-state: running;
+}
+
+
+/*Բ�ν���������*/
+.round6 .percentage,.round5 .percentage,.round4 .percentage,.round3 .percentage,.round2 .percentage,.round1 .percentage{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    left: 36%;
+    top: 110px;
+    z-index: 3;
+    font: 700 25px "microsoft yahei";
+    line-height: 30px;
+    opacity: 0;
+    text-align: center;
+}
+/*Բ�ν���������*/
+/*skill*/
+
+
+/*EXP*/
+.exp .exp-content{
+    width: 1000px;
+    height: 550px;
+    background-color:transparent;
+    margin: 65px auto;
+    position: relative;
+}
+.exp .exp-content .meilan h4{
+    height: 130px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+.exp .exp-content .jingdong h4{
+    height: 130px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+.exp .exp-content .wjs h4{
+    height: 130px;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.flipper p{
+    font-size: 13px;
+    padding:3px 10px;
+}
+
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateX(180deg);
+}
+.exp .exp-content .flip-container{
+    margin: 60px;
+}
+.flip-container, .front, .back {
+    width: 380px;
+    height: 130px;
+    border-radius: 5px;
+}
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    transform-origin: 100% 65px;
+    position: relative;
+}
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front {
+    z-index: 2;
+    background-color: #ffecd8;
+}
+.back {
+    transform: rotateX(180deg);
+    background-color: #ededed;
+}
+/*EXP*/
+
+
+/*contact*/
+.contact .contact-div{
+    width: 800px;
+    height: 500px;
+    margin: 80px auto;
+    background-color: transparent;
+    position: relative;
+    text-align: center;
+}
+.contact .contact-div p {
+    text-align: center;
+    font:700 50px "Microsoft YaHei";
+}
+.contact .contact-div .img img {
+    position: relative;
+    display: none;
+    float: left;
+    width: 60px;
+    height: 60px;
+    margin: 30px 20px 0 148px;
+    cursor: pointer;
+}
+.contact .erweima {
+    width: 180px;
+    height: 180px;
+    padding: 5px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 180px;
+    left: 80px;
+}
+.contact .erweima img{
+    width: 180px;
+    height: 180px;
+}
+.contact .beian{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    color: #000;
+}
+.contact .contact-div .jianlidownload{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    color: #000000;
+    font-size: 30px;
+    margin-left: -90px;
+}
+.contact .contact-div .jianlidownload::before{
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 70px;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/download.svg");
+    background-repeat: no-repeat;
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+/*contact*/
+
+/*about me*/
+.aboutMe .aboutme-content {
+    width: 1000px;
+    height: 550px;
+    background-color: transparent;
+    margin: 65px auto;
+    position: relative;
+}
+.aboutMe .aboutme-content .myname {
+    width: 100%;
+    font-size: 30px;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    text-indent: 9.3em;
+    color: #000;
+}
+.aboutMe .aboutme-content .myengname{
+    width: 100%;
+    font-size: 30px;
+    position: absolute;
+    top: 19%;
+    left: 0%;
+    text-indent: 21em;
+    color: #000;
+}
+.aboutMe .aboutme-content .aphorism{
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    text-align: center;
+    color: #000;
+}
+.aboutme-content .personal{
+    position: absolute;
+    left: 72px;
+    top: 280px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+}
+.aboutme-content li{
+    padding: 3px 0px;
+}
+.aboutme-content .collage{
+    position: absolute;
+    left: 303px;
+    top: 280px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+}
+.aboutme-content .position{
+    position: absolute;
+    left: 570px;
+    top: 280px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+}
+.aboutme-content .evaluate li:nth-child(2){
+    width: 160px;
+}
+.aboutme-content .evaluate{
+    position: absolute;
+    left: 798px;
+    top: 280px;
+    text-align: center;
+    color: #000000;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+}
+.aboutme-content .onfouce{
+    position: absolute;
+    top: 265px;
+    left: 20px;
+    width: 160px;
+    height: 150px;
+    border: 5px solid #e92322;
+    border-radius: 3px;
+    background-color:#ffffff;
+    opacity: 0.5;
+}
+
+/*hobby*/
+.hobby .hobby-content{
+    width: 1000px;
+    height: 550px;
+    background-color:transparent;
+    margin: 65px auto;
+    position: relative;
+}
+.slide {
+    height: 500px;
+    position: relative;
+}
+.slide li {   /*���е�li��ʽ����һ���ģ���λ��Ԫ�ض���һ���㼶�ĸ����ͬ����λ�õĻ��������Ԫ�ػ�ѹס ǰ���Ԫ��*/
+    position: absolute;
+    left: 200px;
+    top: 0;
+}
+.slide li img {
+    width: 100%;  /*����ͼƬ�Ŀ�͸���Ԫ��һ����*/
+}
+.arrow {
+    opacity: 1;
+    z-index: 100;
+}
+.prev,.next {
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    top: 93%;
+    margin-top: -56px;
+    background: url(../images/arrright.svg) no-repeat;
+    background-size: cover;
+    z-index: 100;
+
+}
+.prev{
+    left: 190px;
+    transform: rotate(180deg);
+}
+.next {
+    right: 187px ;
+    background-image: url(../images/arrright.svg) ;
+}
+/*.slide .one {*/
+/*width: 200px;*/
+/*top: 100px;*/
+/*left: 100px;*/
+/*opacity: 0.2;*/
+/*z-index: 2;*/
+
+/*}*/
+/*.slide .two {*/
+/*width: 300px;*/
+/*top: 180px;*/
+/*left: 160px;*/
+/*opacity: .8;*/
+/*z-index: 3;*/
+
+/*}*/
+/*.slide .three {*/
+/*width: 400px;*/
+/*top: 250px;*/
+/*left: 300px;*/
+/*opacity: 1;*/
+/*z-index: 4;*/
+
+/*}*/
+/*.slide .four {*/
+/*width: 300px;*/
+/*top: 180px;*/
+/*left: 530px;*/
+/*opacity: 0.8;*/
+/*z-index: 3;*/
+
+/*}*/
+/*.slide .five {*/
+/*width: 200px;*/
+/*top: 100px;*/
+/*left: 695px;*/
+/*opacity: 0.2;*/
+/*z-index: 2;*/
+/*}*/
