@@ -143,18 +143,7 @@ $(function(){
             $(".round6").children().css({"animation-play-state":"running"});
 
             //延时显示百分数并累加
-            setTimeout(function () {
-                $(".percentage").animate({"opacity":1},200);
-                per=0;
-                var time=setInterval(function () {
-                    per++;
-                    per= per<10 ? "0"+per:per;
-                    $(".percentage").text(per+"%");
-                    if(per==90){
-                        clearInterval(time);
-                    }
-                },20)
-            },1500)
+        
         }
     })
     $(".h5c3").mouseenter(function () {

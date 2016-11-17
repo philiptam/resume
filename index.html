@@ -11,6 +11,28 @@
     <script src="js/index.js"></script>
     <script src="js/animate.js"></script>
     <script src="js/demo2.js"></script>
+    <!--判断当前设备代码-->
+    <script>
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        var flag = IsPC();
+        if(!flag){
+            window.open("mobile/mobile.html","_self")
+        }
+    </script>
 </head>
 <body>
     <div class="myResume">
@@ -19,11 +41,11 @@
         <!-- 顶部导航-->
         <div class="nav-top" id="nav-top">
             <ul class="nav-top-ul" id="nav-top-ul">
-                <li class="current"><span data-hover="关于我">about me</span></li>
-                <li><span data-hover="技能">skill</span></li>
-                <li><span data-hover="经验">exp</span></li>
-                <li><span data-hover="爱好">hobby</span></li>
-                <li><span data-hover="联系我吧!">contact</span></li>
+                <li class="current"><span data-hover="个人信息">about me</span></li>
+                <li><span data-hover="我的技能">skill</span></li>
+                <li><span data-hover="工作经验">exp</span></li>
+                <li><span data-hover="我的爱好">hobby</span></li>
+                <li><span data-hover="联系我吧">contact</span></li>
                 <!--<li class="current">About Me</li>-->
                 <!--<li>skill</li>-->
                 <!--<li>exp</li>-->
@@ -49,14 +71,14 @@
                         <li><img src="images/collage.svg" alt=""/></li>
                         <li>学历：本科</li>
                         <li>广东工业大学华立学院</li>
-                        <li>毕业时间：2013 07</li>
+                        <li>毕业时间：2013 08</li>
                         <li>外语：CET-4</li>
                         <li>技能：全国计算机二级</li>
                     </ul>
                     <ul class="position">
                         <li><img src="images/position.svg" alt=""/></li>
                         <li>工作地点：广州</li>
-                        <li>工作经验：1.5年</li>
+                        <li>工作经验：2年</li>
                         <li>应聘职位：web前端工程师</li>
                         <li>期望工资：面议</li>
                     </ul>
@@ -72,16 +94,15 @@
                 <div class="skill-contant">
                     <div class="skilldescribe">熟练使用html，HTML对页面符合W3C布局，能够灵活运用H5C3的效果，提高用户对页面的体验</div>
                     <div class="skilldescribe">熟练掌握javascript原生代码的使用，熟悉jQuery的使用方法，极大提高页面的开发效率以及很好地处理不同浏览器的兼容问题</div>
-                    <div class="skilldescribe">掌握ajax对后台计算机的请求方法，做到即使不用刷新页面也能够请求数据，达到减压服务器压力的目的，并且能够更好提高用户体验</div>
-                    <div class="skilldescribe">掌握node.js的开发流程，通过node.js来处理前后端的数据</div>
-                    <div class="skilldescribe">了解面向对象的原理和方法，对闭包，原型链有一定的理解</div>
-                    <div class="skilldescribe">能对目前世面上的流行框架能够基本使用和了解，如bootstarp、AngularJS、Vuejs、zepto</div>
+                    <div class="skilldescribe">掌握ajax对后台计算机的请求方法，掌握JSON、XML实现浏览器与后台服务器进行异步交互</div>
+                    <div class="skilldescribe">熟悉使用bootstarp的栅格系统对页面实现响应式布局、及zepto.js对移动端进行web开发</div>
+                    <div class="skilldescribe">熟悉原生javaScript编程方式,对面向对象的思想有一定的了解，以及它的实现原理和过程。对闭包、原型链、作用域有一定的认识</div>
+                    <div class="skilldescribe">能基本使用angular.js、vue.js等常用的MVC、MVVM框架</div>
                     <div class="myskill">
                         <div class="clickhere"><img src="images/clickhere.svg" alt=""/></div>
                         <div class="sk1">
                             <span class="h5c3">H5C3</span>
                             <nav class="round1">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -91,7 +112,6 @@
                         <div class="sk2">
                             <span class="jQuery">jQuery</span>
                             <nav class="round2">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -101,7 +121,6 @@
                         <div class="sk3">
                             <span class="ajax mousein">&nbsp;ajax</span>
                             <nav class="round3">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -109,9 +128,8 @@
                             </nav>
                         </div>
                         <div class="sk4">
-                            <span class="node-js">node.js</span>
+                            <span class="node-js">Bootstrap</span>
                             <nav class="round4">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -119,9 +137,8 @@
                             </nav>
                         </div>
                         <div class="sk5">
-                            <span class="mianxiangduixiang">面向对象</span>
+                            <span class="mianxiangduixiang">javascript</span>
                             <nav class="round5">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -131,7 +148,6 @@
                         <div class="sk6">
                             <span class="frame">流行框架</span>
                             <nav class="round6">
-                                <span class="percentage">00%</span>
                                 <div class="r1"></div>
                                 <div class="r2"></div>
                                 <div class="r3"></div>
@@ -150,7 +166,7 @@
                             </div>
                             <div class="back">
                                 <p>1、按照PSD设计图完成页面的静态布局</p>
-                                <p>2、利用jQuery对页面添加tab栏切换及轮播图的动画效果</p>
+                                <p>2、利用jQuery对页面添加tab栏切换及动画效果</p>
                                 <p>3、运用HTML5的技术使页面支持视频的播放</p>
                                 <p>4、对SEO进行优化，提高网站的搜索排名</p>
                                 <p>5、企业咨询模块，利用ajax技术进行表单验证</p>
@@ -163,22 +179,44 @@
                                 <h4>OA管理系统</h4>
                             </div>
                             <div class="back">
-                                <p>1、运用DIV+CSS布局添加OA办公系统新闻板块</p>
-                                <p>2、改良OA系统登陆界面</p>
-                                <p>3、进一步美化系统的用户界面</p>
+                                <p>1、OA系统登陆界面布局</p>
+                                <p>2、OA系统工作台工作界面布局</p>
+                                <p>3、采用jquery+easyUI对页面进行搭建</p>
                                 <p>4、对系统进行日常的维护与信息更新工作</p>
                             </div>
                         </div>
                     </div>
-                    <div class="flip-container wjs fl" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flip-container fgg fl" ontouchstart="this.classList.toggle('hover');">
                         <div class="flipper">
                             <div class="front">
-                                <h4></h4>
+                                <h4>房估估二手房房产评估网</h4>
                             </div>
                             <div class="back">
-                                <p></p>
-                                <p></p>
-                                <p></p>
+                                <p>1、登录注册页面，使用正则表达式和Ajax异步请求进行验证</p>
+                                <p>2、使用HTML5、canvas完成表单、图片绘制</p>
+                                <p>3、使用第三方API服务，丰富网站资源</p>
+                                <p>4、运用JQuery对DOM元素进行操作，提高开发效率</p>
+                                <p>5、使用图片预加载技术，提高用户浏览体验</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-container wzq fl" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <h4>五子棋小游戏</h4>
+                            </div>
+                            <div class="back">
+                                <p style="text-align: center;height: 100%;padding-top: 60px"><a target="_blank" href="morpion/chess.html">五子棋小游戏</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-container fl wzq" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <h4>别踩白块儿</h4>
+                            </div>
+                            <div class="back">
+                                <p style="text-align: center;height: 100%;padding-top: 60px"><a target="_blank" href="morpion/blackblock.html">别踩白块儿</a></p>
                             </div>
                         </div>
                     </div>
@@ -214,11 +252,10 @@
             <li class="contact clearfix" id="contact">
                 <div class="contact-div">
                     <p id="contactme">contact me</p>
-                    <div class="img" id="img">
-                        <img src="images/wechar.svg" alt=""/>
-                        <img src="images/phone.svg" alt=""/>
-                        <img src="images/email.svg" alt=""/>
-                    </div>
+                    <p>137-1020-1846</p>
+                    <p>tanphilip@hotmail.com</p>
+                    <p><a target="_blank" href="https://github.com/philiptam">github.com/philiptam</a></p>
+                    <p><a target="_blank" href="http://www.cnblogs.com/philiptam">www.cnblogs.com/philiptam</a></p>
                     <!--<div class="erweima" id="erweima">-->
                         <!--<img src="images/erweima.jpg" alt=""/>-->
                     <!--</div>-->
@@ -240,38 +277,5 @@
     </div>
 
 </body>
-<script>
 
-//        var width=window.innerWidth
-//        if(width<=640){
-//            window.open("mobile/mobile.html","_self")
-//        }
-//        window.onresize= function () {
-//            width=window.innerWidth;
-//            if(width<=640){
-//                window.open("mobile/mobile.html","_self")
-//            }
-//        }
-
-
-        function IsPC() {
-            var userAgentInfo = navigator.userAgent;
-            var Agents = ["Android", "iPhone",
-                "SymbianOS", "Windows Phone",
-                "iPad", "iPod"];
-            var flag = true;
-            for (var v = 0; v < Agents.length; v++) {
-                if (userAgentInfo.indexOf(Agents[v]) > 0) {
-                    flag = false;
-                    break;
-                }
-            }
-            return flag;
-        }
-
-        var flag = IsPC();
-        if(!flag){
-            window.open("mobile/mobile.html","_self")
-        }
-</script>
 </html>

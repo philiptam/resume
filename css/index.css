@@ -167,7 +167,7 @@ html,body {
 
 /*С��ͷ*/
 
-/*С���*/
+/*С���?*/
 .littleRock {
     position: absolute;
     width: 45px;
@@ -196,7 +196,7 @@ html,body {
     height: 45px;
     position: relative;
 }
-/*С���*/
+/*С���?*/
 
 /*ͷ��*/
 .myResume .mypic {
@@ -361,11 +361,11 @@ html,body {
     color: #0CE854;
 }
 .myskill .sk4 .node-js::before{
-    background-image: url("../images/nodejs.png");
+    background-image: url("../images/bootstrap.svg");
     width: 60px;
     -webkit-background-size: 60px 60px;
     background-size: 60px 60px;
-    left: -38px;
+    left: -24px;
 }
 .myskill .sk5 .mianxiangduixiang{
     left: 28px;
@@ -474,6 +474,7 @@ html,body {
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
+
 .sk6 .round6 .r4,.sk5 .round5 .r4,.sk1 .round1 .r4,.sk4 .round4 .r4,.sk2 .round2 .r4,.sk3 .round3 .r4{
     width: 142px;
     height: 142px;
@@ -519,27 +520,27 @@ html,body {
     animation-play-state: paused;
 }
 .sk2 .round2 .r2{
-    animation: opacity12 1ms 2.5s,move1 1s linear 2.5s;
+    animation: opacity12 1ms 2.5s,move2 1s linear 2.5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
 .sk3 .round3 .r2{
-    animation: opacity13 1ms 2.5s,move1 1s linear 2.5s;
+    animation: opacity13 1ms 2.5s,move3 1s linear 2.5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
 .sk4 .round4 .r2{
-    animation: opacity14 1ms 2.5s,move1 1s linear 2.5s;
+    animation: opacity14 1ms 2.5s,move4 1s linear 2.5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
 .sk5 .round5 .r2{
-    animation: opacity15 1ms 2.5s,move1 1s linear 2.5s;
+    animation: opacity15 1ms 2.5s,move5 1s linear 2.5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
 .sk6 .round6 .r2{
-    animation: opacity16 1ms 2.5s,move1 1s linear 2.5s;
+    animation: opacity16 1ms 2.5s,move44 1s linear 2.5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
@@ -635,6 +636,7 @@ html,body {
     background-color:transparent;
     margin: 65px auto;
     position: relative;
+    padding-left: 165px;
 }
 .exp .exp-content .meilan h4{
     height: 130px;
@@ -650,9 +652,16 @@ html,body {
     margin-top: 50px;
     position: relative;
 }
-.exp .exp-content .wjs h4{
+.exp .exp-content .fgg h4{
     height: 130px;
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+.exp .exp-content .wzq h4{
+    height: 130px;
+    font-size: 30px;
     text-align: center;
     margin-top: 50px;
     position: relative;
@@ -668,7 +677,7 @@ html,body {
     transform: rotateX(180deg);
 }
 .exp .exp-content .flip-container{
-    margin: 60px;
+    margin: 15px;
 }
 .flip-container, .front, .back {
     width: 380px;
@@ -710,6 +719,72 @@ html,body {
 .contact .contact-div p {
     text-align: center;
     font:700 50px "Microsoft YaHei";
+}
+#contactme{
+    margin-bottom: 60px;
+}
+.contact .contact-div p:nth-of-type(2){
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.contact .contact-div p:nth-of-type(2):before{
+    content: "";
+    position: absolute;
+    left: 280px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/phone.svg);
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.contact .contact-div p:nth-of-type(3){
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.contact .contact-div p:nth-of-type(3):before{
+    content: "";
+    position: absolute;
+    left: 235px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/email.svg);
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.contact .contact-div p:nth-of-type(4){
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.contact .contact-div p:nth-of-type(4):before{
+    content: "";
+    position: absolute;
+    left: 245px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/github.svg);
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+.contact .contact-div p:nth-of-type(5){
+    font-size: 20px;
+    position: relative;
+}
+.contact .contact-div p:nth-of-type(5):before{
+    content: "";
+    position: absolute;
+    left: 215px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/blog.svg);
+    background-repeat:no-repeat;
+    background-size: contain;
 }
 .contact .contact-div .img img {
     position: relative;
@@ -866,13 +941,13 @@ html,body {
     height: 500px;
     position: relative;
 }
-.slide li {   /*���е�li��ʽ����һ���ģ���λ��Ԫ�ض���һ���㼶�ĸ����ͬ����λ�õĻ��������Ԫ�ػ�ѹס ǰ���Ԫ��*/
+.slide li {   /*���е�li��ʽ����һ���ģ���λ��Ԫ�ض���һ���㼶�ĸ����ͬ����λ�õĻ��������Ԫ�ػ�ѹ�? ǰ���Ԫ��?*/
     position: absolute;
     left: 200px;
     top: 0;
 }
 .slide li img {
-    width: 100%;  /*����ͼƬ�Ŀ�͸���Ԫ��һ����*/
+    width: 100%;  /*����ͼƬ�Ŀ�͸���Ԫ��һ����?*/
 }
 .arrow {
     opacity: 1;

@@ -113,13 +113,46 @@
         transform: rotate(189deg);
     }
 }
+/*jq*/
+@keyframes move2 {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(170deg);
+    }
+}
+/*ajax*/
+@keyframes move3 {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(120deg);
+    }
+}
+/*bootstrap*/
+@keyframes move4 {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+/*JS*/
+@keyframes move5 {
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(170deg);
+    }
+}
 /*二环上颜色*/
 
 @keyframes opacity1 {
-    /*0%{*/
-        /*border-top-color: transparent;*/
-        /*border-right-color: transparent;*/
-    /*}*/
+
     100%{
         border-top-color:#F29F3F;
         border-right-color: #F29F3F;
@@ -127,10 +160,7 @@
 }
 
 @keyframes opacity11 {
-    /*0%{*/
-    /*border-top-color: transparent;*/
-    /*border-right-color: transparent;*/
-    /*}*/
+
     100%{
         border-top-color:#8192D6;
         border-right-color: #8192D6;
@@ -183,6 +213,7 @@
         transform: rotate(225deg);
     }
 }
+
 
 
 

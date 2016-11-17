@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>making by  Ankou</title>
+    <style>
+        /*思路：*/
+       /*1.创建一个容器。400*600*/
+        /*2.创建6行子div。*/
+        /*3.每行有6列子div*/
+        /*4.写一个方法，负责创建一行div，把一行四列，插入到容器中*/
+        /*5.每30毫秒增加top值*/
+        /*6.每往下挤100px，再创建一行div，插入容器的最前面。*/
+        *{
+            margin: 0px;
+            padding: 0px;
+            /*box-sizing: border-box;*/
+        }
+        #gameZone{
+            width: 400px;
+            height: 600px;
+            background: #f1edba;
+            border: 1px solid dimgrey;
+            border-radius: 10px;
+            margin: 20px auto;
+            position: relative;
+            box-shadow:2px 2px 6px 6px #330000,-2px -2px 6px 6px #330000;
+            overflow: hidden;
+        }
+        #boardb{
+            width:100%;
+            height: 600px;
+            position:relative;
+            top: -100px;
+        }
+        .row{
+            width: 100%;
+            height: 100px;
+        }
+        .cell{
+            width: 100px;
+             height: 100px;
+            float:left;
+        }
+        .black{
+            background-color: black;
+            border-radius: 5px;
+            box-shadow: 2px 2px 1px 1px #000011;
+        }
+        #score{
+            height: 50px;
+            width: 50px;
+            line-height: 50px;
+           background: #cc9900;
+            text-align: center;
+            position: absolute;
+            right:280px;
+        }
+        #name{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            right:80px;
+        }
+        .color{
+            background: darkgray;
+            border-radius: 5px;
+        }
+        #p1{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            right: 330px;
+            font-size: 25px;
+        }
+         #p2{
+             height: 50px;
+             line-height: 50px;
+             text-align: center;
+             position: absolute;
+             right: 0px;
+             left: 0px;
+             font-size: 30px;
+             color: red;
+             z-index: 9999;
+             display: none;
+         }
+       #btn1{
+            position: absolute;
+           background: #2B91AF;
+            width: 50px;
+            height: 30px;
+            top:80px;
+            right: 405px;
+        }
+        #btn2{
+            position: absolute;
+            background: #f1edba;
+            width: 50px;
+            height: 30px;
+            top:120px;
+            right: 405px;
+        }
+        #btn3{
+            position: absolute;
+            background:#b3d557;
+            width: 60px;
+            height: 30px;
+            top:160px;
+            right: 400px;
+        }
+    </style>
+</head>
+<body>
+<audio src="Westlife - Nothing's Gonna Change My Love For You.mp3"  id="music"   loop ></audio>
+<p id="p1">你的得分：</p>
+<h1 id="score">0</h1>
+<h1 id="name">级别:菜鸟</h1>
+<input type="button" value="开始"   id="btn1"/>
+<input type="button" value="暂停" id="btn2"/>
+<input type="submit" value="重新开始" id="btn3"/>
+<div id="gameZone">
+    <p id="p2">游戏结束</p>
+    <div id="boardb"></div>
+</div>
+<script>
+    var timeId=null;
+    var flag=0;//设置一个标识 1为进行时   2为暂停   3为游戏结束
+    var speed=2;//这里设置一个setTop每次移动的速度。
+    var  setTop;//设置一个全局变量
+// 封装一个通过id获取dom元素的函数
+    function  $(id){
+        return document.getElementById(id);
+    }
+//   封装一个创建div的函数
+   function  createDiv(className){
+           var div=document.createElement("div");
+           div.className=className;
+           return div;
+       }
+//  创建一个返回一个数组的函数，随机其中一个单元，值为"cell  black"  其他的值为"black".
+    function  createArr(){
+         var  arr=["cell","cell","cell","cell"]
+         var  i=Math.floor(Math.random()*4);
+               arr[i]="cell black";
+             return arr;
+     }
+//初始化，用这个函数创键相应的函数，就for循环，调用createDiv函数。
+   function init(){
+      for(var i=0;i<6;i++){//这里根据游戏的规则，得先告诉把最后一行空出来。
+          createRow();
+      }
+   }
+    //在这里得做一个判断的函数。
+    function judge(e){
+                if(flag==3){//此时这个状态代表这师表  不能再点击了
+                    return;
+                }
+        if(e.target.className.indexOf("black")==-1){//如果这里出现了白块就让它结束
+                           fail();
+        }
+        else{
+            score();
+            e.target.className="cell color";
+            e.target.parentNode.pass=1;//添加这个属性，用来做标记，如果点击到了，就会有这个属性。
+        }
+    }
+    //同时这里还得添加一个计分的函数。
+    function score (){
+        var newScore=parseInt($("score").innerHTML)+1;
+        $("score").innerHTML= newScore;
+        if(newScore%10==0){
+            jiasu();
+            if(newScore/10==1){
+                $("name").innerHTML="级别:新手";
+            }
+            else if(newScore/10==2){
+                $("name").innerHTML="级别:高手";
+            }
+            else if(newScore/10==3){
+                $("name").innerHTML="级别:大师";
+            }
+            else{
+                $("name").innerHTML="级别:无敌";
+            }
+
+        }
+    }
+//    动态创建一行四列div.把创建行也封装成一个创建行的函数。
+   function  createRow(){
+                  var row=createDiv("row");
+                 $("boardb").appendChild( row);
+                        var classes= createArr();
+                   for(var i=0;i<4;i++){
+                       row.appendChild(createDiv(classes[i]));
+                   };
+                if($("boardb").firstChild==null){
+                    $("boardb").appendChild( row);
+                }
+               else{
+                    $("boardb").insertBefore(row,$("boardb").firstChild);
+                }
+
+        }
+//再封装一个动画函数。
+     function  move(){
+//         根据top的变化而移动
+//          先获取boardb的标签
+         var boardb=$("boardb");
+//         再获取他的top值
+             setTop=parseInt(window.getComputedStyle(boardb,null)["top"]);
+         if(speed+setTop>0){//这里的条件一定要判断，如果正好跨过settop为0，这个值的话，就会出现断层。
+             setTop=0;
+         }
+         else{
+             setTop+=speed;
+         }
+             boardb.style.top=  setTop+"px";
+         if(setTop==0){
+             createRow();//为了能够跟之前一样，我们把top又得设置成-100px
+             boardb.style.top="-100px";//这里是一个难点。
+
+             if(boardb.childNodes.length==8){
+                 deleteRow();//同时也要删除最后一个行。
+             }// 这里要判断一下，什么时候才删除。要等点击之后，然后插入了两行，最后一行离开游戏页面才删除。
+         }
+         else if(setTop==(speed-100)){//这里也是走了一步之后。
+             var rows= boardb.childNodes;//获得他的子节点
+             if((rows.length==7)&&(rows[rows.length-1].pass!==1)){//这里得好好注意啦，再最后点击到那一行了，就会添加pass属性，并等于1
+                 //如果没点击到的话，就没有这个属性，同时就说明你输了。
+                                           fail();//调用输这个函数
+             }
+         }
+     }
+    //封装一个输了的函数，因为这个要多次用到。
+    function  fail(){
+        clearInterval(timeId);
+        $("p2").style.display="block";
+        $("music").src="失败退场歌曲可惜不是你-非诚勿扰-4234613.mp3";//注意这里换了歌曲之后，
+        $("music").play();//你要重新让它播放才行
+        $("btn1").onclick="return false";
+        flag=3;
+    }
+//    封装一个加速的函数
+    function  jiasu(){
+              speed+=2;
+        if(speed>=20){
+              alert("你作弊了");
+        }
+    }
+//加一个定时器函数
+    function  clock(){
+        clearInterval(timeId);
+        timeId=setInterval(function(){
+            //只能在容器的最前面追加div。同时在容器的最后面移除div。top值，每向下挤出100px。
+//    就创建一行div，然后插入容器的最前面。
+            move();
+        },30)
+    }
+    //删除最后一个节点函数
+    function deleteRow(){
+        $("boardb").removeChild($("boardb").lastChild);
+    }
+    init();
+    $("btn1").onclick=function(){//这里要先点击开始按钮，所以注册点击屏幕点击事件需要放在点击按钮事件里面。
+             clock();//
+        $("gameZone").onclick=function(e){  //在这里注册一个点击事件
+           judge(e);//调用那个判断函数。
+       }
+        $("music").play();
+    }
+    $("btn2").onclick=function(){//同时点击按钮暂停按钮，同时能够取消点击视频事件。
+        clearInterval(timeId);
+        $("gameZone").onclick="return false";//定时器清除，再点击开始的时候能够恢复点击事件，同时开启定时器。
+        $("music").pause();
+    }
+    $("btn3").onclick=function(){
+        window.location.reload();// 重新刷新页面。
+    }
+</script>
+</body>
+</html>
